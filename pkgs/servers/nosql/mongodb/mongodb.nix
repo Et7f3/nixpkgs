@@ -90,7 +90,7 @@ in stdenv.mkDerivation rec {
   sconsFlags = [
     "--release"
     "--ssl"
-    #"--rocksdb" # Don't have this packaged yet
+    "--rocksdb"
     "--wiredtiger=on"
     "--js-engine=mozjs"
     "--use-sasl-client"

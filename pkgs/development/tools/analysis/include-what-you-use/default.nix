@@ -20,6 +20,10 @@ stdenv.mkDerivation rec {
       --replace "'include-what-you-use'" "'$out/bin/include-what-you-use'"
   '';
 
+  passthru = {
+    inherit llvmPackages;
+  };
+
   meta = with lib; {
     description = "Analyze #includes in C/C++ source files with clang";
     longDescription = ''

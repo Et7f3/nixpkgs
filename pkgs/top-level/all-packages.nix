@@ -16626,7 +16626,7 @@ with pkgs;
 
       rsrc="$out/resource-root"
       mkdir "$rsrc"
-      ln -s "${cc.stdenv.cc.cc.lib}/lib/clang/${cc.stdenv.cc.cc.version}/include" "$rsrc"
+      ln -s "${cc.llvmPackages.clang}/resource-root/include" "$rsrc"
       echo "-resource-dir=$rsrc" >> $out/nix-support/cc-cflags
     '';
   };

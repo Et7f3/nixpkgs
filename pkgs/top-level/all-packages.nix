@@ -16623,6 +16623,11 @@ with pkgs;
     extraBuildCommands = ''
       wrap include-what-you-use $wrapper $ccPath/include-what-you-use
       substituteInPlace "$out/bin/include-what-you-use" --replace 'dontLink=0' 'dontLink=1'
+
+      rsrc="$out/resource-root"
+      mkdir "$rsrc"
+      ln -s "${cc.stdenv.cc.cc.lib}/lib/clang/${cc.stdenv.cc.cc.version}/include" "$rsrc"
+      echo "-resource-dir=$rsrc" >> $out/nix-support/cc-cflags
     '';
   };
 

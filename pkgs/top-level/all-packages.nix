@@ -16615,8 +16615,15 @@ with pkgs;
 
   img = callPackage ../development/tools/img { };
 
-  include-what-you-use = callPackage ../development/tools/analysis/include-what-you-use {
+  include-what-you-use-unwrapped = callPackage ../development/tools/analysis/include-what-you-use {
     llvmPackages = llvmPackages_14;
+  };
+  include-what-you-use = wrapCCWith rec {
+    cc = include-what-you-use-unwrapped;
+    extraBuildCommands = ''
+      wrap include-what-you-use $wrapper $ccPath/include-what-you-use
+      substituteInPlace "$out/bin/include-what-you-use" --replace 'dontLink=0' 'dontLink=1'
+    '';
   };
 
   indent = callPackage ../development/tools/misc/indent { };

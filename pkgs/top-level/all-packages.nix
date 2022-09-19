@@ -16629,6 +16629,7 @@ with pkgs;
       ln -s "${cc.llvmPackages.clang}/resource-root/include" "$rsrc"
       echo "-resource-dir=$rsrc" >> $out/nix-support/cc-cflags
     '';
+    libcxx = cc.llvmPackages.libcxx;
   };
 
   indent = callPackage ../development/tools/misc/indent { };

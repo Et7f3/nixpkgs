@@ -16623,6 +16623,7 @@ with pkgs;
     extraBuildCommands = ''
       wrap include-what-you-use $wrapper $ccPath/include-what-you-use
       substituteInPlace "$out/bin/include-what-you-use" --replace 'dontLink=0' 'dontLink=1'
+      substituteInPlace "$out/bin/include-what-you-use" --replace ' && isCxx=1 || isCxx=0' '&&  true; isCxx=1'
 
       rsrc="$out/resource-root"
       mkdir "$rsrc"

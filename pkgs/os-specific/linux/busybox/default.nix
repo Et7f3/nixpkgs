@@ -87,7 +87,7 @@ stdenv.mkDerivation rec {
 
     ${configParser}
 
-    cat << EOF | parseconfig
+    parseconfig << EOF
 
     CONFIG_PREFIX "$out"
     CONFIG_INSTALL_NO_USR y

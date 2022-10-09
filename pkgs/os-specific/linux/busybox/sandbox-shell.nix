@@ -1,4 +1,4 @@
-{ busybox}:
+{ busybox, extraConfig ? "" }:
 
 # Minimal shell for use as basic /bin/sh in sandbox builds
 busybox.override {
@@ -22,5 +22,5 @@ busybox.override {
     CONFIG_ASH_JOB_CONTROL y
     CONFIG_ASH_PRINTF y
     CONFIG_ASH_TEST y
-  '';
+  '' + extraConfig;
 }

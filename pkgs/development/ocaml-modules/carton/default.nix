@@ -3,6 +3,7 @@
 , checkseum, logs, psq, fmt
 , result, rresult, fpath, base64, bos, digestif, alcotest
 , crowbar, alcotest-lwt, lwt, findlib, mirage-flow, cmdliner, hxd
+, getconf
 }:
 
 buildDunePackage rec {
@@ -54,6 +55,7 @@ buildDunePackage rec {
     crowbar
     lwt
     mirage-flow
+    getconf
   ];
 
   meta = with lib; {

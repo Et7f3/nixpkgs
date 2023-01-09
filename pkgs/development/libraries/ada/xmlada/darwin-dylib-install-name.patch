@@ -1,0 +1,88 @@
+diff --git a/dom/xmlada_dom.gpr b/dom/xmlada_dom.gpr
+index 3dde341..c5840a8 100644
+--- a/dom/xmlada_dom.gpr
++++ b/dom/xmlada_dom.gpr
+@@ -34,6 +34,10 @@ project XmlAda_Dom is
+    for Library_Version use "lib" & Project'Library_Name
+       & XmlAda_Shared.So_Ext & "." & XmlAda_Shared.Version;
+ 
++   for Library_Install_Name_Option use "-Wl,-install_name,"
++       & XmlAda_Shared.Lib_Root_Install_Dir
++       & Project'Name & "." & Project'Library_Kind;
++
+    package Builder  renames XmlAda_Shared.Builder;
+    package Compiler renames XmlAda_Shared.Compiler;
+    package Binder   renames XmlAda_Shared.Binder;
+diff --git a/input_sources/xmlada_input.gpr b/input_sources/xmlada_input.gpr
+index caed6f6..f5fcd62 100644
+--- a/input_sources/xmlada_input.gpr
++++ b/input_sources/xmlada_input.gpr
+@@ -38,6 +38,10 @@ project XmlAda_Input is
+    package Binder   renames XmlAda_Shared.Binder;
+    package Ide      renames XmlAda_Shared.Ide;
+ 
++   for Library_Install_Name_Option use "-Wl,-install_name,"
++       & XmlAda_Shared.Lib_Root_Install_Dir
++       & Project'Name & "." & Project'Library_Kind;
++
+    package Install is
+       for Artifacts ("share/doc/xmlada")
+         use ("../docs/_build/html/*", "../docs/_build/latex/XMLAda.pdf");
+diff --git a/sax/xmlada_sax.gpr b/sax/xmlada_sax.gpr
+index 3df4151..9ad1632 100644
+--- a/sax/xmlada_sax.gpr
++++ b/sax/xmlada_sax.gpr
+@@ -34,6 +34,10 @@ project XmlAda_Sax is
+    for Library_Version use "lib" & Project'Library_Name
+       & XmlAda_Shared.So_Ext & "." & XmlAda_Shared.Version;
+ 
++   for Library_Install_Name_Option use "-Wl,-install_name,"
++       & XmlAda_Shared.Lib_Root_Install_Dir
++       & Project'Name & "." & Project'Library_Kind;
++
+    package Builder  renames XmlAda_Shared.Builder;
+    package Compiler renames XmlAda_Shared.Compiler;
+    package Binder   renames XmlAda_Shared.Binder;
+diff --git a/schema/xmlada_schema.gpr b/schema/xmlada_schema.gpr
+index 139d4da..8bdfc8d 100644
+--- a/schema/xmlada_schema.gpr
++++ b/schema/xmlada_schema.gpr
+@@ -35,6 +35,10 @@ project XmlAda_Schema is
+    for Library_Version use "lib" & Project'Library_Name
+       & XmlAda_Shared.So_Ext & "." & XmlAda_Shared.Version;
+ 
++   for Library_Install_Name_Option use "-Wl,-install_name,"
++       & XmlAda_Shared.Lib_Root_Install_Dir
++       & Project'Name & "." & Project'Library_Kind;
++
+    package Builder  renames XmlAda_Shared.Builder;
+    package Compiler renames XmlAda_Shared.Compiler;
+    package Binder   renames XmlAda_Shared.Binder;
+diff --git a/unicode/xmlada_unicode.gpr b/unicode/xmlada_unicode.gpr
+index bfd3f00..f463651 100644
+--- a/unicode/xmlada_unicode.gpr
++++ b/unicode/xmlada_unicode.gpr
+@@ -32,6 +32,10 @@ project XmlAda_Unicode is
+    for Library_Version use "lib" & Project'Library_Name
+       & XmlAda_Shared.So_Ext & "." & XmlAda_Shared.Version;
+ 
++   for Library_Install_Name_Option use "-Wl,-install_name,"
++       & XmlAda_Shared.Lib_Root_Install_Dir
++       & Project'Name & "." & Project'Library_Kind;
++
+    package Builder  renames XmlAda_Shared.Builder;
+    package Compiler renames XmlAda_Shared.Compiler;
+    package Binder   renames XmlAda_Shared.Binder;
+diff --git a/xmlada_shared.gpr.in b/xmlada_shared.gpr.in
+index 42ef340..ad2e2c9 100644
+--- a/xmlada_shared.gpr.in
++++ b/xmlada_shared.gpr.in
+@@ -39,6 +39,8 @@ abstract project XmlAda_Shared is
+ 
+    So_Ext := "@SO_EXT@";
+ 
++   Lib_Root_Install_Dir := External ("out") & "/lib/xmlada/";
++
+    package Builder is
+        case Mode is
+           when "Production" | "nochecks" =>

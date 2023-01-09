@@ -24,6 +24,8 @@ stdenv.mkDerivation rec {
     gprbuild-boot
   ];
 
+  patches = lib.optional stdenv.hostPlatform.isDarwin ./darwin-dylib-install-name.patch;
+
   meta = with lib; {
     description = "XML/Ada: An XML parser for Ada";
     homepage = "https://github.com/AdaCore/xmlada";

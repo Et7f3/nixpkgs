@@ -1,0 +1,16 @@
+diff --git a/gpr/gpr.gpr b/gpr/gpr.gpr
+index 7d08ebd5..c9f4a936 100644
+--- a/gpr/gpr.gpr
++++ b/gpr/gpr.gpr
+@@ -41,6 +41,11 @@ library project GPR is
+    for Object_Dir use "libobj/" & Bld & "/" & Gnat_Lib_Type;
+    for Library_Dir use "lib/" & Bld & "/" & Gnat_Lib_Type;
+ 
++   -- Must manually match to --lib-subdir argument of installation command
++   -- under libgpr.install.shared Makefile target
++   for Library_Install_Name_Option use "-Wl,-install_name,"
++         & External ("out") & "/lib/" & Project'Name & "/" & Gnat_Lib_Type & "/" & Project'Library_Name;
++
+    --------------
+    -- Compiler --
+    --------------

@@ -14,6 +14,7 @@
 , zlib
 , python3
 , ncurses
+, CoreFoundation
 }:
 
 let
@@ -27,6 +28,9 @@ let
     python3 = [ python3 ncurses ];
     syslog = [ ];
     zlib = [ zlib ];
+  };
+  darwinLibsFor = {
+    python3 = [ CoreFoundation ];
   };
 in
 
@@ -53,7 +57,8 @@ stdenv.mkDerivation rec {
   # downstream executable.
   propagatedBuildInputs = [
     gnatcoll-core
-  ] ++ libsFor."${component}" or [];
+  ] ++ libsFor."${component}" or []
+  ++ lib.optionals stdenv.isDarwin (darwinLibsFor."${component}" or []);
 
   # explicit flag for GPL acceptance because upstreams
   # allows a gcc runtime exception for all bindings

@@ -32,6 +32,8 @@ buildPythonPackage rec {
     hash = "sha256-jn78clR2SxEB4qcL6mBtTta2bBa9wfhel1KCAf5fVqo=";
   };
 
+  patches = [ ./disable.patch ];
+
   postPatch = ''
     # it is fine if lint tools are missing
     substituteInPlace conftest.py \

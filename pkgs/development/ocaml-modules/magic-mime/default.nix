@@ -10,7 +10,6 @@ buildDunePackage rec {
   };
 
   minimalOCamlVersion = "4.03";
-  useDune2 = true;
 
   meta = with lib; {
     description = "Convert file extensions to MIME types";

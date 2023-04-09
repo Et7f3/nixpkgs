@@ -13,7 +13,6 @@ buildDunePackage rec {
   };
 
   minimumOCamlVersion = "4.03";
-  useDune2 = true;
 
   meta = with lib; {
     homepage = "https://gitlab.inria.fr/fpottier/fix/";

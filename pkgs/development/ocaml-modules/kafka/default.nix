@@ -5,7 +5,6 @@ buildDunePackage rec {
   pname = "kafka";
   version = "0.5";
 
-  useDune2 = true;
 
   src = fetchurl {
     url = "https://github.com/didier-wenzek/ocaml-kafka/releases/download/${version}/kafka-${version}.tbz";

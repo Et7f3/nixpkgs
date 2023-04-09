@@ -8,7 +8,6 @@ buildDunePackage rec {
   pname = "color";
   version = "0.2.0";
 
-  useDune2 = true;
   minimalOCamlVersion = "4.05";
 
   src = fetchurl {

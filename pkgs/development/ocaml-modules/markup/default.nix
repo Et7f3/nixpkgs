@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "markup";
   version = "1.0.3";
 
-  useDune2 = true;
 
   src = fetchFromGitHub {
     owner = "aantron";

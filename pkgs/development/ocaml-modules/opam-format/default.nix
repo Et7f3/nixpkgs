@@ -3,7 +3,6 @@
 buildDunePackage rec {
   pname = "opam-format";
 
-  useDune2 = true;
 
   inherit (opam-core) src version;
 

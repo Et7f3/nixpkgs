@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "xmlplaylist";
   version = "0.1.5";
 
-  useDune2 = true;
 
   src = fetchFromGitHub {
     owner = "savonet";

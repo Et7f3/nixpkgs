@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "speex";
   version = "0.4.1";
 
-  useDune2 = true;
 
   src = fetchFromGitHub {
     owner = "savonet";

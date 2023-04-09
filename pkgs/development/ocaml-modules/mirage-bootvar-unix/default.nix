@@ -6,7 +6,6 @@ buildDunePackage rec {
   pname = "mirage-bootvar-unix";
   version = "0.1.0";
 
-  useDune2 = true;
 
   src = fetchurl {
     url = "https://github.com/mirage/mirage-bootvar-unix/releases/download/${version}/mirage-bootvar-unix-${version}.tbz";

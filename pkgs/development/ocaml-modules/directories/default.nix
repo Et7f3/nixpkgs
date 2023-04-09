@@ -3,7 +3,6 @@
 buildDunePackage rec {
   pname = "directories";
   version = "0.5";
-  useDune2 = true;
 
   minimumOCamlVersion = "4.07";
 

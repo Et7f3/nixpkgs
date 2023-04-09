@@ -7,7 +7,6 @@ buildDunePackage rec {
   pname = "ptmap";
   version = "2.0.5";
 
-  useDune2 = true;
 
   src = fetchurl {
     url = "https://github.com/backtracking/ptmap/releases/download/${version}/ptmap-${version}.tbz";

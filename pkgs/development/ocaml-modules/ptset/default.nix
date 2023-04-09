@@ -6,7 +6,6 @@ buildDunePackage rec {
   pname = "ptset";
   version = "1.0.1";
 
-  useDune2 = true;
 
   src = fetchurl {
     url = "https://github.com/backtracking/ptset/releases/download/${version}/ptset-${version}.tbz";

@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "samplerate";
   version = "0.1.6";
 
-  useDune2 = true;
 
   src = fetchFromGitHub {
     owner = "savonet";

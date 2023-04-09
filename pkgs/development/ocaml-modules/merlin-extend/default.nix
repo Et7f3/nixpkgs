@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "merlin-extend";
   version = "0.6";
 
-  useDune2 = true;
 
   src = fetchurl {
     url = "https://github.com/let-def/merlin-extend/releases/download/v${version}/merlin-extend-v${version}.tbz";

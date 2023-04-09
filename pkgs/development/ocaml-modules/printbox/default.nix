@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "printbox";
   version = "0.6.1";
 
-  useDune2 = true;
 
   minimalOCamlVersion = "4.03";
 

@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "ezxmlm";
   version = "1.1.0";
 
-  useDune2 = true;
 
   src = fetchurl {
     url = "https://github.com/mirage/ezxmlm/releases/download/v${version}/ezxmlm-v${version}.tbz";

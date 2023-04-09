@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "safepass";
   version = "3.1";
 
-  useDune2 = true;
 
   src = fetchFromGitHub {
     owner = "darioteixeira";

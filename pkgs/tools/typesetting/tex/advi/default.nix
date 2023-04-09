@@ -34,7 +34,6 @@ ocamlPackages.buildDunePackage rec {
   pname = "advi";
   version = "2.0.0";
 
-  useDune2 = true;
 
   minimalOCamlVersion = "4.11";
 

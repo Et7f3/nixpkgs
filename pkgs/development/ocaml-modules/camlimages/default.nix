@@ -6,7 +6,6 @@ buildDunePackage rec {
   pname = "camlimages";
   version = "5.0.4";
 
-  useDune2 = true;
 
   minimumOCamlVersion = "4.07";
 

@@ -5,7 +5,6 @@ buildDunePackage {
 
   inherit (hacl-star-raw) version src meta doCheck minimalOCamlVersion;
 
-  useDune2 = true;
 
   propagatedBuildInputs = [
     hacl-star-raw

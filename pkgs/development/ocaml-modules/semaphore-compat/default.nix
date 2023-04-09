@@ -9,7 +9,6 @@ buildDunePackage rec {
     sha256 = "139c5rxdp4dg1jcwyyxvhxr8213l1xdl2ab0mc288rfcppsiyxrb";
   };
 
-  useDune2 = true;
 
   meta = with lib; {
     description = "Compatibility Semaphore module";

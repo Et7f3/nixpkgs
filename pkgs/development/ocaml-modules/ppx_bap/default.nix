@@ -15,7 +15,6 @@
 buildDunePackage rec {
   pname = "ppx_bap";
   version = "0.14";
-  useDune2 = true;
 
   minimumOCamlVersion = "4.07";
 

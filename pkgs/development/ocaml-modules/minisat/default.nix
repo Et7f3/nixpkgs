@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "minisat";
   version = "0.4";
 
-  useDune2 = true;
 
   minimumOCamlVersion = "4.05";
 

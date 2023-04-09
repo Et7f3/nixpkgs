@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "ladspa";
   version = "0.2.2";
 
-  useDune2 = true;
 
   src = fetchFromGitHub {
     owner = "savonet";

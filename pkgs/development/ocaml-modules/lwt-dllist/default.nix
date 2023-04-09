@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "lwt-dllist";
   version = "1.0.1";
 
-  useDune2 = true;
 
   minimumOCamlVersion = "4.02";
 

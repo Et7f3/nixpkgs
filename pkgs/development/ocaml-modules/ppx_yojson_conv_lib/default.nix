@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "ppx_yojson_conv_lib";
   version = "0.15.0";
 
-  useDune2 = true;
 
   minimumOCamlVersion = "4.02.3";
 

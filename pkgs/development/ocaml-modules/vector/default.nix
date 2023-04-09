@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "vector";
   version = "1.0.0";
 
-  useDune2 = true;
 
   src = fetchurl {
     url = "https://github.com/backtracking/vector/releases/download/${version}/vector-${version}.tbz";

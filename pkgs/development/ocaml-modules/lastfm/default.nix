@@ -12,7 +12,6 @@ buildDunePackage rec {
   pname = "lastfm";
   version = "0.3.3";
 
-  useDune2 = true;
 
   src = fetchFromGitHub {
     owner = "savonet";

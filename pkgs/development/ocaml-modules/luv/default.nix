@@ -7,7 +7,6 @@
 buildDunePackage rec {
   pname = "luv";
   version = "0.5.11";
-  useDune2 = true;
 
   src = fetchurl {
     url = "https://github.com/aantron/luv/releases/download/${version}/luv-${version}.tar.gz";

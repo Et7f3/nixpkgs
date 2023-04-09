@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "lens";
   version = "1.2.5";
 
-  useDune2 = true;
 
   src = fetchFromGitHub {
     owner = "pdonadeo";

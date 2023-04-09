@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "opti";
   version = "1.0.3";
 
-  useDune2 = true;
 
   minimumOCamlVersion = "4.02";
 

@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "mirage-device";
   version = "2.0.0";
 
-  useDune2 = true;
 
   src = fetchurl {
     url = "https://github.com/mirage/mirage-device/releases/download/v${version}/mirage-device-v${version}.tbz";

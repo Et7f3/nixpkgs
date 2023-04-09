@@ -31,7 +31,6 @@ buildDunePackage rec {
     inherit (param) sha256;
   };
 
-  useDune2 = true;
 
   propagatedBuildInputs = [ astring result ] ++ param.extraBuildInputs;
 

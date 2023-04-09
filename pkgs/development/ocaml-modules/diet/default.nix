@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "diet";
   version = "0.4";
 
-  useDune2 = true;
 
   src = fetchurl {
     url =

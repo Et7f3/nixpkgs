@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "unionFind";
   version = "20220122";
 
-  useDune2 = true;
   minimalOCamlVersion = "4.05";
 
   src = fetchFromGitLab {

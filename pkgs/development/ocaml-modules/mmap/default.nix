@@ -4,7 +4,6 @@ buildDunePackage rec {
   pname = "mmap";
   version = "1.1.0";
 
-  useDune2 = true;
 
   src = fetchurl {
     url = "https://github.com/mirage/mmap/releases/download/v${version}/mmap-v${version}.tbz";

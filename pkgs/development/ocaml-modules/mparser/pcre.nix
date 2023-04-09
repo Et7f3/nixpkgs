@@ -2,7 +2,6 @@
 
 buildDunePackage rec {
   pname = "mparser-pcre";
-  useDune2 = true;
 
   inherit (mparser) src version;
 

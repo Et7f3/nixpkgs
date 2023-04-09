@@ -4,7 +4,7 @@ buildDunePackage rec {
   pname = "ppx_derivers";
   version = "1.2.1";
 
-  useDune2 = lib.versionAtLeast ocaml.version "4.08";
+  duneVersion = if lib.versionAtLeast ocaml.version "4.08" then "2" else "1";
 
   minimumOCamlVersion = "4.02";
 

@@ -66,7 +66,7 @@ buildDunePackage rec {
   pname = "ppxlib";
   inherit version;
 
-  duneVersion = if param.useDune2 or true then "2" else "1";
+  duneVersion = param.duneVersion or "2";
 
   src = fetchurl {
     url = "https://github.com/ocaml-ppx/ppxlib/releases/download/${version}/ppxlib-${version}.tbz";

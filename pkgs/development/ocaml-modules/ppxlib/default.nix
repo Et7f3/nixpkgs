@@ -62,7 +62,7 @@ if param ? max_version && lib.versionAtLeast ocaml.version param.max_version
 then throw "ppxlib-${version} is not available for OCaml ${ocaml.version}"
 else
 
-buildDunePackage rec {
+buildDunePackage {
   pname = "ppxlib";
   inherit version;
 

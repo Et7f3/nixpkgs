@@ -4,7 +4,7 @@
 , cmdliner
 }:
 
-buildDunePackage rec {
+buildDunePackage {
   pname = "kafka_lwt";
 
   inherit (kafka) version src;

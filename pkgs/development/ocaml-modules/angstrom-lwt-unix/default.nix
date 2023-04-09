@@ -1,6 +1,6 @@
 { lib, fetchFromGitHub, buildDunePackage, angstrom, lwt }:
 
-buildDunePackage rec {
+buildDunePackage {
   pname = "angstrom-lwt-unix";
 
   inherit (angstrom) version src;

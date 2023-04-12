@@ -53,9 +53,13 @@ in {
   opencl = addToBuildInputs ([ pkgs.opencl-headers pkgs.ocl-icd ]
     ++ lib.optionals stdenv.isDarwin [ pkgs.darwin.apple_sdk.frameworks.OpenCL ]);
   opengl = old:
-    # csc: invalid option `-framework OpenGL'
-    (brokenOnDarwin old)
-    // (addToBuildInputsWithPkgConfig [ pkgs.libGL pkgs.libGLU ] old);
+    {
+      postPatch = old.postPatch or "" + ''
+        substituteInPlace opengl.egg --replace 'framework ' 'framework" "'
+        '';
+    }
+    // (addToBuildInputsWithPkgConfig ([ pkgs.libGL pkgs.libGLU ]
+    ++ lib.optionals stdenv.isDarwin (with pkgs.darwin.apple_sdk.frameworks; [ OpenGL Foundation ])) old);
   openssl = addToBuildInputs pkgs.openssl;
   plot = addToBuildInputs pkgs.plotutils;
   postgresql = addToBuildInputsWithPkgConfig pkgs.postgresql;

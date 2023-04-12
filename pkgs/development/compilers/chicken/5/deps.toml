@@ -569,9 +569,9 @@ version = "1.0"
 [condition-utils]
 dependencies = ["srfi-1", "srfi-69", "check-errors"]
 license = "bsd"
-sha256 = "0v2k0spikmrwjb5j360hgi126k1zahnjswhfa2as4mlz6pwl5aqi"
+sha256 = "1srb3lgnfvlpwn31w72jcg5wlghlgpp0khgwlk8cqy9ll5piqwqk"
 synopsis = "SRFI 12 Condition Utilities"
-version = "2.2.1"
+version = "2.2.2"
 
 [continuations]
 dependencies = []
@@ -2207,9 +2207,9 @@ version = "0.1.1"
 [r7rs]
 dependencies = ["matchable", "srfi-1", "srfi-13"]
 license = "bsd"
-sha256 = "0l9smsii64n6rxvxf0bgjnpx16341zv7xh7xr60nk6f88kdkl03q"
+sha256 = "1lxby5hj8bwqdwys5324fvrj6q9j4dp10mlvla3qjfc9scppxj79"
 synopsis = "R7RS compatibility"
-version = "1.0.7"
+version = "1.0.8"
 
 [rabbit]
 dependencies = ["srfi-1"]
@@ -2669,9 +2669,9 @@ version = "0.3.3"
 [sparse-vectors]
 dependencies = ["srfi-1", "record-variants"]
 license = "bsd"
-sha256 = "1cqimy2qcjhzfjx1q7ids1wqg43wzpzz56cn193fwm75szqg0xdj"
+sha256 = "0nmk6c9mhls38lyp0d8a9f3xh94jbl2dqbmqr9pab23pnx4hha1j"
 synopsis = "Arbitrarily large vectors"
-version = "1.0.1"
+version = "1.1.0"
 
 [spiffy-cgi-handlers]
 dependencies = ["spiffy", "intarweb", "uri-common", "socket", "records", "srfi-1", "srfi-18", "srfi-13", "miscmacros"]

@@ -42,8 +42,10 @@ in {
   icu = addToBuildInputsWithPkgConfig pkgs.icu;
   imlib2 = addToBuildInputsWithPkgConfig pkgs.imlib2;
   lazy-ffi = old:
-    # fatal error: 'ffi/ffi.h' file not found
-    (brokenOnDarwin old)
+    {
+      # We have same layout for linux and darwin
+      postPatch = old.postPatch or "" + "substituteInPlace lazy-ffi.scm --replace 'ffi/ffi.h' 'ffi.h'";
+    }
     // (addToBuildInputs pkgs.libffi old);
   leveldb = addToBuildInputs pkgs.leveldb;
   magic = addToBuildInputs pkgs.file;

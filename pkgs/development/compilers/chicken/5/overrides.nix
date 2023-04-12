@@ -78,9 +78,11 @@ in {
     (brokenOnDarwin old)
     // (addToBuildInputs pkgs.libstemmer old);
   stfl = old:
-    # Undefined symbols for architecture arm64: "_clearok"
-    (brokenOnDarwin old)
-    // (addToBuildInputs [ pkgs.ncurses pkgs.stfl ] old);
+    {
+      # TODO: Weird the ld wrapper didn't find the libs
+      postPatch = old.postPatch or "" + "substituteInPlace build-stfl.scm --replace 'pkg-config --libs stfl' 'pkg-config --libs stfl ncurses'";
+    }
+    // (addToBuildInputsWithPkgConfig [ pkgs.ncurses pkgs.stfl ] old);
   taglib = addToBuildInputs [ pkgs.zlib pkgs.taglib ];
   uuid-lib = addToBuildInputs pkgs.libuuid;
   ws-client = addToBuildInputs pkgs.zlib;
